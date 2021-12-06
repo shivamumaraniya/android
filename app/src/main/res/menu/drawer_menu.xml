@@ -4,6 +4,11 @@
     tools:showIn="navigation_view">
 
     <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="home" />
+
+    <item
         android:id="@+id/nav_login"
         android:icon="@drawable/ic_login"
         android:title="login" />
@@ -18,13 +23,5 @@
         android:icon="@drawable/ic_tractor"
         android:title="tractor" />
 
-    <item
-        android:id="@+id/nav_youtube"
-        android:icon="@drawable/ic_youtube"
-        android:title="youtube" />
-    <item
-        android:id="@+id/nav_facebook"
-        android:icon="@drawable/ic_facebook"
-        android:title="facebook" />
 
 </menu>
