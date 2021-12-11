@@ -6,16 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
 
 
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,8 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
                     new HomeFragement()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
+
+
     }
 
     @Override
@@ -63,8 +68,9 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
                         new LoginFragment()).commit();
                 break;
             case R.id.nav_contact:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ContactFragment()).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ContactFragment()).commit();
+                Intent intent = new Intent(getApplicationContext(),ContactActivity.class);
+                startActivity(intent);
                 break;
             case R.id.nav_tractor:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -75,4 +81,5 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
